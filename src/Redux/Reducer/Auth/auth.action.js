@@ -14,7 +14,7 @@ export const signin = (userData) => async (dispatch) => {
       data: { credentials: userData },
     });
 
-    window.location.href = "http://localhost:3000/delivery";
+    window.location.href = "https://zomto-master-clone.netlify.app/delivery";
 
     localStorage.setItem(
       "zomatoUser",
@@ -35,7 +35,7 @@ export const signUp = (userData) => async (dispatch) => {
       data: { credentials: userData },
     });
 
-    window.location.href = "http://localhost:3000/delivery";
+    window.location.href = "https://zomto-master-clone.netlify.app/delivery";
 
     localStorage.setItem(
       "zomatoUser",
@@ -52,7 +52,7 @@ export const googleAuth = (token) => async (dispatch) => {
   try {
     localStorage.setItem("zomatoUser", JSON.stringify({ token }));
     dispatch({ type: GOOGLE_AUTH, payload: {} });
-    window.location.href = "http://localhost:3000/delivery";
+    window.location.href = "https://zomto-master-clone.netlify.app/delivery";
   } catch (error) {
     return dispatch({ type: "ERROR", payload: error });
   }
@@ -62,7 +62,7 @@ export const signOut = () => async (dispatch) => {
   try {
     localStorage.removeItem("zomatoUser");
     clearUser();
-    window.location.href = "http://localhost:3000/delivery";
+    window.location.href = "https://zomto-master-clone.netlify.app/delivery";
 
     return dispatch({ type: SIGN_OUT, payload: {} });
   } catch (error) {
